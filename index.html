@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HARUDAKE (beta)</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="header">
+    <a id="header-link" class="header-link">
+        <h1>HARUDAKE (beta)</h1>
+    </a>
+    <p>写真はるだけ</p>
+</header>
+    <main class="gallery">
+        <a href="img/photo1.jpg" class="gallery-item">
+            <img src="img/photo1_thumb.jpg" alt="猪苗代湖にある翁島港">
+        </a>
+        
+        <a href="img/photo2.jpg" class="gallery-item">
+            <img src="img/photo2_thumb.jpg" alt="夕焼け">
+        </a>
+
+        <a href="img/photo3.jpg" class="gallery-item">
+            <img src="img/photo3_thumb.jpg" alt="のらねこ">
+        </a>
+
+	<a href="img/photo4.png" class="gallery-item">
+		<img src="img/photo4_thumb.png" alt="sea">
+	</a>
+
+	<a href="img/photo5.jpeg" class="gallery-item">
+		<img src="img/photo5_thumb.jpeg" alt="tori">
+	</a>
+
+	<a href="img/photo6.jpg" class="gallery-item">
+		<img src="img/photo6_thumb.jpg" alt="close">
+	</a>
+
+	<a href="img/photo7.jpeg" class="gallery-item">
+		<img src="img/photo7_thumb.jpeg" alt="cafe">
+	</a>
+
+	<a href="img/photo8.jpeg" class="gallery-item">
+		<img src="img/photo8_thumb.jpeg" alt="castel">
+	</a>
+
+	<a href="img/photo9.jpeg" class="gallery-item">
+		<img src="img/photo9_thumb.jpeg" alt="classroom">
+	</a>
+
+        </main>
+<script>
+    // ヘッダーのリンク要素を取得
+    const headerLink = document.getElementById('header-link');
+
+    // クリックイベントリスナーを追加
+    headerLink.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+</script>
+    <footer class="footer">
+        <p>&copy; kagaya_takumi</p>
+    </footer>
+
+</body>
+</html>
