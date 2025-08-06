@@ -1,0 +1,124 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f5f5f7; /* Appleのサイトに似た明るいグレー */
+    color: #1d1d1f; /* ダークグレー */
+    font-size: 17px;
+    font-weight: 400;
+    /* スクロール時のアニメーションを追加 */
+    scroll-behavior: smooth;
+}
+
+/* 固定ヘッダーのスタイル */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    z-index: 1000; /* 他の要素より手前に表示 */
+    backdrop-filter: blur(20px); /* 背景をぼかす効果 */
+    background-color: rgba(255, 255, 255, 0.7); /* 半透明の白背景 */
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08); /* 細い境界線 */
+    transition: background-color 0.3s ease;
+}
+
+/* ヘッダーのリンクスタイル */
+.header-link {
+    display: block; /* リンク全体をクリック可能にする */
+    text-decoration: none; /* 下線を非表示にする */
+    color: inherit; /* 親要素の色を継承する */
+}
+
+.header h1 {
+    font-size: 1.2rem;
+    font-weight: 600; /* Appleらしい太めのフォント */
+    letter-spacing: 0.1rem;
+    margin: 0;
+    padding: 15px 0;
+    color: #1d1d1f;
+}
+
+/* ヘッダーのサブタイトルを非表示にする */
+.header p {
+    display: none;
+}
+
+/* ヘッダーの高さ分、コンテンツを下にずらす */
+.gallery {
+    padding-top: 90px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px; /* 余白を広めにとる */
+    padding-left: 30px;
+    padding-right: 30px;
+    max-width: 1440px; 
+    margin: 0 auto; 
+}
+
+.gallery-item {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    border-radius: 12px; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* 控えめな影 */
+    transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.gallery-item:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+    transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.02); /* 控えめな拡大効果 */
+}
+
+
+.footer {
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 60px;
+    font-size: 13px;
+    color: #888;
+}
+
+/* ダークモード対応 */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1d1d1f;
+        color: #f5f5f7;
+    }
+
+    .header {
+        background-color: rgba(0, 0, 0, 0.7);
+        border-bottom-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .header h1 {
+        color: #f5f5f7;
+    }
+
+    .gallery-item {
+        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.05);
+    }
+
+    .gallery-item:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* 影を暗くし、広がりを調整 */
+    }
+
+    .footer {
+        color: #999;
+    }
+}
+
